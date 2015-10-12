@@ -6,9 +6,7 @@ title: "Learn Algorithms Ten - Dynamic programming"
 categories: Algorithms C++&Python
 tags: Algorithms
 group: archive
-icon: key
 ---
-{% include codepiano/setup %}
 
 10.1 Dynamic programming
 
@@ -41,7 +39,7 @@ Step 3: Computing the fastest times.
 Step 4: Constructing the fastest way through the factory.
 
 Assembly_Line_Scheduling Code:
-
+```
     #include <iostream>
     
     using namespace std;
@@ -193,7 +191,7 @@ Assembly_Line_Scheduling Code:
     	dynamic_assline_schedule();
     	return 0;
     }
-    
+```   
     
 10.1.2 Matrix-chain multiplication
 

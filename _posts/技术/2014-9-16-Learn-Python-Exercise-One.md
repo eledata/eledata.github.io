@@ -6,8 +6,8 @@ title: "Learn Python Exercise One"
 categories: Python
 tags: Python
 group: archive
-icon: key
 ---
+
 {% include codepiano/setup %}
 
 Learn the argv and data input/output
