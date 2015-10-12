@@ -88,9 +88,3 @@
   /2014/07/27/norms-of-vector-and-matrix.html
 
   /2014/07/25/matrix-completion.html
-
-  /2013/12/31/Can-not.html
-
-  /2012/12/31/To-my-friends.html
-
-  /2011/06/01/Seeker-reply-me.html
