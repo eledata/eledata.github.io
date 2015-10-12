@@ -1,0 +1,942 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+<title>Learn Python Exercise Six | 林安亚的博客</title>
+<meta name="author" content="Anya Lin">
+
+  <meta name="keywords" content="Learn Python">
+
+
+  <meta name="description " content="Learn Python Exercise">
+
+<link rel="shortcut icon" href="/public/img/deer3.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/public/css/bootstrap.css">
+<link rel="stylesheet" href="/public/css/font-awesome.css">
+<link rel="stylesheet" href="/public/js/prettify/prettify.css">
+<link rel="stylesheet" href="/public/css/base.css">
+<link href="/pages/atom.xml" rel="alternate" title="林安亚的博客" type="application/atom+xml">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-lg-3 col-sm-13 col-xs-13 aside visible-md visible-lg">
+  <div class="row">
+    <div class="col-md-2 col-xs-2 aside1">
+      <br>
+      <a class="pjaxlink" href="/"><img src="/public/img/deer3.png" class="img-ronuded avatar" style="border-width:0px; border-color:#000"></a>
+      <br><br><br><br>
+      <ul class="nav nav-pills nav-stacked">
+             <!-- 这里是aside1的读书、生活、科研、技术、绘画-->
+         <li><a href="#生活" data-toggle="tab">生活</a></li>
+             <!-- 这里是aside1的读书、生活、科研、技术、绘画-->
+         <li><a href="#科研" data-toggle="tab">科研</a></li>
+             <!-- 这里是aside1的读书、生活、科研、技术、绘画-->
+         <li><a href="#技术" data-toggle="tab">技术</a></li>
+             <!-- 这里是aside1的读书、生活、科研、技术、绘画-->
+         <li><a href="#python" data-toggle="tab">python</a></li>
+             <!-- 这里是aside1的读书、生活、科研、技术、绘画-->
+         <li><a href="#algorithms" data-toggle="tab">algorithms</a></li>
+             <!-- 这里是aside1的读书、生活、科研、技术、绘画-->
+         <li><a href="#c++&python" data-toggle="tab">c++&python</a></li>
+             <!-- 这里是aside1的读书、生活、科研、技术、绘画-->
+         <li><a href="#读书" data-toggle="tab">读书</a></li>
+        
+        <li><a href="#tags" data-toggle="tab">标签</a></li>  
+        <li><a class="pjaxlink" href="/pages/archive.html">归档</a></li>
+        <li><a class="pjaxlink" href="/pages/about.html">关于</a></li>  
+        <!-- <li><a href="#tags" data-toggle="tab"><i class="fa fa-tags fa-lg"></i></a></li>
+        <li><a class="pjaxlink" href="/pages/archive.html"><i class="fa fa-archive fa-lg"></i></a></li>
+        <li><a class="pjaxlink" href="/pages/about.html"><i class="fa fa-user fa-lg"></i></a></li>
+        这是原来现实汉字的代码，我改为了图标 -->
+      </ul>
+      <div class="aside1_bottom">
+        <table class="table table-condensed">
+          <tr>
+            <td><a href="/pages/atom.xml" target="_blank"><i class="fa fa-rss fa-lg" style="color:#fff;"></i></a></td>
+            <td><a href="mailto:lay.1010@hotmail.com"><i class="fa fa-envelope-o fa-lg" style="color:#fff;"></i></a></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="col-md-10 col-xs-10 aside2">
+      <div class="row">
+        <div class="tab-content"> 
+           
+            <div class="tab-pane" id="生活">
+              <div class="list-group">
+                <!--<h2 class="center">生活</h2>-->     <!--原来aside2上面的大标题-->
+                
+                  <a href="/2013/12/31/Can-not.html" class="list-group-item-lay pjaxlink">学不会</a>
+                
+                  <a href="/2012/12/31/To-my-friends.html" class="list-group-item-lay pjaxlink">致友人书</a>
+                
+                  <a href="/2011/06/01/Seeker-reply-me.html" class="list-group-item-lay pjaxlink">Seeker的回信</a>
+                
+              </div>
+            </div>
+           
+            <div class="tab-pane" id="科研">
+              <div class="list-group">
+                <!--<h2 class="center">科研</h2>-->     <!--原来aside2上面的大标题-->
+                
+                  <a href="/2015/09/12/Intuition-of-Eigen-Value.html" class="list-group-item-lay pjaxlink">从二次型最优化问题中理解矩阵特征值的意义</a>
+                
+                  <a href="/2015/03/23/Newton-QuasiNewton-Method.html" class="list-group-item-lay pjaxlink">牛顿法与拟牛顿法（DFP BFGS LBFGS VLBFGS）</a>
+                
+                  <a href="/2015/02/04/Group-Meeting.html" class="list-group-item-lay pjaxlink">大数据机器学习初探---南大李武军</a>
+                
+                  <a href="/2014/11/26/Presentation-at-Chinese-Academy-of-Science.html" class="list-group-item-lay pjaxlink">我的报告 Decentralized Privacy-Preserving Low-Rank Matrix Completion</a>
+                
+                  <a href="/2014/11/10/Basic-Algorithms-of-Convex-Opt.html" class="list-group-item-lay pjaxlink">凸优化的一些基础算法</a>
+                
+                  <a href="/2014/11/09/What-is-NP-Hard.html" class="list-group-item-lay pjaxlink">什么是 P, NP, NP-complete, NP-hard</a>
+                
+                  <a href="/2014/10/01/Alibaba-Big-Data.html" class="list-group-item-lay pjaxlink">阿里巴巴大数据竞赛回顾与总结</a>
+                
+                  <a href="/2014/09/11/Matlab-tips.html" class="list-group-item-lay pjaxlink">Matlab科研小贴士</a>
+                
+                  <a href="/2014/08/31/Papers-about-average-consensus.html" class="list-group-item-lay pjaxlink">动态一致平均问题算法-EXTRA和DAC</a>
+                
+                  <a href="/2014/08/22/Average-Consensus.html" class="list-group-item-lay pjaxlink">对于一致平均问题的理解</a>
+                
+                  <a href="/2014/07/27/norms-of-vector-and-matrix.html" class="list-group-item-lay pjaxlink">各类范数</a>
+                
+                  <a href="/2014/07/25/matrix-completion.html" class="list-group-item-lay pjaxlink">低秩矩阵补全</a>
+                
+              </div>
+            </div>
+           
+            <div class="tab-pane" id="技术">
+              <div class="list-group">
+                <!--<h2 class="center">技术</h2>-->     <!--原来aside2上面的大标题-->
+                
+                  <a href="/2015/02/13/Cplus-on-MAC.html" class="list-group-item-lay pjaxlink">Mac以及Windows上搭建C++工作环境</a>
+                
+                  <a href="/2015/01/30/Git-Resources.html" class="list-group-item-lay pjaxlink">Git常用命令速查表</a>
+                
+                  <a href="/2014/12/06/Make-resume-by-LaTeX.html" class="list-group-item-lay pjaxlink">在Mac上用LaTeX写漂亮的简历</a>
+                
+                  <a href="/2014/10/31/Yosemite-Matlab-Running-Error.html" class="list-group-item-lay pjaxlink">Yosemite OS X 10.10 Matlab 2012a停止工作的解决办法</a>
+                
+                  <a href="/2014/10/07/Mac-Rar-Unrar.html" class="list-group-item-lay pjaxlink">Mac安装unrar和rar解压缩工具</a>
+                
+                  <a href="/2014/09/30/Linux4.html" class="list-group-item-lay pjaxlink">Linux 4：磁盘与文件系统管理</a>
+                
+                  <a href="/2014/09/19/Linux3.html" class="list-group-item-lay pjaxlink">Linux 3：文件与目录管理</a>
+                
+                  <a href="/2014/09/17/Linux2.html" class="list-group-item-lay pjaxlink">Linux 2：文件权限与目录配置</a>
+                
+                  <a href="/2014/09/16/Markdown-Math.html" class="list-group-item-lay pjaxlink">Markdown输入LaTeX数学公式</a>
+                
+                  <a href="/2014/09/13/Linux.html" class="list-group-item-lay pjaxlink">Linux 1：登陆与在线求助man page</a>
+                
+                  <a href="/2014/09/12/Linux-Problems.html" class="list-group-item-lay pjaxlink">Linux 0：实际问题</a>
+                
+                  <a href="/2014/08/12/Remote-Desk-from-Mac-to-Windows-PC.html" class="list-group-item-lay pjaxlink">Mac远程桌面连接Windows</a>
+                
+                  <a href="/2014/08/10/Using-LaTeX-with-Sublime-and-Skim-for-Mac.html" class="list-group-item-lay pjaxlink">在Mac上通过Sublime、Skim编辑LaTeX</a>
+                
+                  <a href="/2014/07/31/LaTeX-beamer-slides.html" class="list-group-item-lay pjaxlink">LaTeX beamer制作幻灯片</a>
+                
+              </div>
+            </div>
+           
+            <div class="tab-pane" id="python">
+              <div class="list-group">
+                <!--<h2 class="center">python</h2>-->     <!--原来aside2上面的大标题-->
+                
+                  <a href="/2014/09/20/Learn-Python-Exercise-Six.html" class="list-group-item-lay pjaxlink">Learn Python Exercise Six</a>
+                
+                  <a href="/2014/09/20/Learn-Python-Exercise-Seven.html" class="list-group-item-lay pjaxlink">Learn Python Exercise Seven</a>
+                
+                  <a href="/2014/09/20/Learn-Python-Exercise-Five.html" class="list-group-item-lay pjaxlink">Learn Python Exercise Five</a>
+                
+                  <a href="/2014/09/19/Learn-Python-Exercise-Three.html" class="list-group-item-lay pjaxlink">Learn Python Exercise Three</a>
+                
+                  <a href="/2014/09/18/Learn-Python-Exercise-Two.html" class="list-group-item-lay pjaxlink">Learn Python Exercise Two</a>
+                
+                  <a href="/2014/09/16/Learn-Python-Exercise-One.html" class="list-group-item-lay pjaxlink">Learn Python Exercise One</a>
+                
+              </div>
+            </div>
+           
+            <div class="tab-pane" id="algorithms">
+              <div class="list-group">
+                <!--<h2 class="center">algorithms</h2>-->     <!--原来aside2上面的大标题-->
+                
+                  <a href="/2014/10/02/Learn-Algorithms-Ten.html" class="list-group-item-lay pjaxlink">Learn Algorithms Ten - Dynamic programming</a>
+                
+                  <a href="/2014/09/27/Learn-Algorithms-One.html" class="list-group-item-lay pjaxlink">Learn Algorithms One</a>
+                
+              </div>
+            </div>
+           
+            <div class="tab-pane" id="c++&python">
+              <div class="list-group">
+                <!--<h2 class="center">c++&python</h2>-->     <!--原来aside2上面的大标题-->
+                
+                  <a href="/2014/10/02/Learn-Algorithms-Ten.html" class="list-group-item-lay pjaxlink">Learn Algorithms Ten - Dynamic programming</a>
+                
+                  <a href="/2014/09/27/Learn-Algorithms-One.html" class="list-group-item-lay pjaxlink">Learn Algorithms One</a>
+                
+              </div>
+            </div>
+           
+            <div class="tab-pane" id="读书">
+              <div class="list-group">
+                <!--<h2 class="center">读书</h2>-->     <!--原来aside2上面的大标题-->
+                
+                  <a href="/2015/01/29/Book-List-2015.html" class="list-group-item-lay pjaxlink">2015年阅读书单</a>
+                
+              </div>
+            </div>
+                
+          <div class="tab-pane" id="tags">
+            <div class="panel-group" id="accordion">
+              <!--<h2 class="center">标签</h2>-->
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#随感">随感</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="随感" class="panel-collapse collapse">
+                    
+                      <a  href='/2011/06/01/Seeker-reply-me.html' class="list-group-item pjaxlink">
+                        Seeker的回信
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#年终总结">年终总结</a>
+                      <span class="badge pull-right">2</span>
+                    </h4>
+                  </div>
+                  <div id="年终总结" class="panel-collapse collapse">
+                    
+                      <a  href='/2013/12/31/Can-not.html' class="list-group-item pjaxlink">
+                        学不会
+                      </a>
+                    
+                      <a  href='/2012/12/31/To-my-friends.html' class="list-group-item pjaxlink">
+                        致友人书
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#Optimization">Optimization</a>
+                      <span class="badge pull-right">8</span>
+                    </h4>
+                  </div>
+                  <div id="Optimization" class="panel-collapse collapse">
+                    
+                      <a  href='/2015/09/12/Intuition-of-Eigen-Value.html' class="list-group-item pjaxlink">
+                        从二次型最优化问题中理解矩阵特征值的意义
+                      </a>
+                    
+                      <a  href='/2015/03/23/Newton-QuasiNewton-Method.html' class="list-group-item pjaxlink">
+                        牛顿法与拟牛顿法（DFP BFGS LBFGS VLBFGS）
+                      </a>
+                    
+                      <a  href='/2015/02/04/Group-Meeting.html' class="list-group-item pjaxlink">
+                        大数据机器学习初探---南大李武军
+                      </a>
+                    
+                      <a  href='/2014/11/26/Presentation-at-Chinese-Academy-of-Science.html' class="list-group-item pjaxlink">
+                        我的报告 Decentralized Privacy-Preserving Low-Rank Matrix Completion
+                      </a>
+                    
+                      <a  href='/2014/11/10/Basic-Algorithms-of-Convex-Opt.html' class="list-group-item pjaxlink">
+                        凸优化的一些基础算法
+                      </a>
+                    
+                      <a  href='/2014/08/31/Papers-about-average-consensus.html' class="list-group-item pjaxlink">
+                        动态一致平均问题算法-EXTRA和DAC
+                      </a>
+                    
+                      <a  href='/2014/08/22/Average-Consensus.html' class="list-group-item pjaxlink">
+                        对于一致平均问题的理解
+                      </a>
+                    
+                      <a  href='/2014/07/25/matrix-completion.html' class="list-group-item pjaxlink">
+                        低秩矩阵补全
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#Math">Math</a>
+                      <span class="badge pull-right">6</span>
+                    </h4>
+                  </div>
+                  <div id="Math" class="panel-collapse collapse">
+                    
+                      <a  href='/2015/09/12/Intuition-of-Eigen-Value.html' class="list-group-item pjaxlink">
+                        从二次型最优化问题中理解矩阵特征值的意义
+                      </a>
+                    
+                      <a  href='/2015/03/23/Newton-QuasiNewton-Method.html' class="list-group-item pjaxlink">
+                        牛顿法与拟牛顿法（DFP BFGS LBFGS VLBFGS）
+                      </a>
+                    
+                      <a  href='/2015/02/04/Group-Meeting.html' class="list-group-item pjaxlink">
+                        大数据机器学习初探---南大李武军
+                      </a>
+                    
+                      <a  href='/2014/11/26/Presentation-at-Chinese-Academy-of-Science.html' class="list-group-item pjaxlink">
+                        我的报告 Decentralized Privacy-Preserving Low-Rank Matrix Completion
+                      </a>
+                    
+                      <a  href='/2014/11/09/What-is-NP-Hard.html' class="list-group-item pjaxlink">
+                        什么是 P, NP, NP-complete, NP-hard
+                      </a>
+                    
+                      <a  href='/2014/07/27/norms-of-vector-and-matrix.html' class="list-group-item pjaxlink">
+                        各类范数
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#LaTeX">LaTeX</a>
+                      <span class="badge pull-right">4</span>
+                    </h4>
+                  </div>
+                  <div id="LaTeX" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/12/06/Make-resume-by-LaTeX.html' class="list-group-item pjaxlink">
+                        在Mac上用LaTeX写漂亮的简历
+                      </a>
+                    
+                      <a  href='/2014/09/16/Markdown-Math.html' class="list-group-item pjaxlink">
+                        Markdown输入LaTeX数学公式
+                      </a>
+                    
+                      <a  href='/2014/08/10/Using-LaTeX-with-Sublime-and-Skim-for-Mac.html' class="list-group-item pjaxlink">
+                        在Mac上通过Sublime、Skim编辑LaTeX
+                      </a>
+                    
+                      <a  href='/2014/07/31/LaTeX-beamer-slides.html' class="list-group-item pjaxlink">
+                        LaTeX beamer制作幻灯片
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#Mac">Mac</a>
+                      <span class="badge pull-right">6</span>
+                    </h4>
+                  </div>
+                  <div id="Mac" class="panel-collapse collapse">
+                    
+                      <a  href='/2015/02/13/Cplus-on-MAC.html' class="list-group-item pjaxlink">
+                        Mac以及Windows上搭建C++工作环境
+                      </a>
+                    
+                      <a  href='/2014/12/06/Make-resume-by-LaTeX.html' class="list-group-item pjaxlink">
+                        在Mac上用LaTeX写漂亮的简历
+                      </a>
+                    
+                      <a  href='/2014/10/31/Yosemite-Matlab-Running-Error.html' class="list-group-item pjaxlink">
+                        Yosemite OS X 10.10 Matlab 2012a停止工作的解决办法
+                      </a>
+                    
+                      <a  href='/2014/10/07/Mac-Rar-Unrar.html' class="list-group-item pjaxlink">
+                        Mac安装unrar和rar解压缩工具
+                      </a>
+                    
+                      <a  href='/2014/08/12/Remote-Desk-from-Mac-to-Windows-PC.html' class="list-group-item pjaxlink">
+                        Mac远程桌面连接Windows
+                      </a>
+                    
+                      <a  href='/2014/08/10/Using-LaTeX-with-Sublime-and-Skim-for-Mac.html' class="list-group-item pjaxlink">
+                        在Mac上通过Sublime、Skim编辑LaTeX
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#Matlab">Matlab</a>
+                      <span class="badge pull-right">2</span>
+                    </h4>
+                  </div>
+                  <div id="Matlab" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/10/31/Yosemite-Matlab-Running-Error.html' class="list-group-item pjaxlink">
+                        Yosemite OS X 10.10 Matlab 2012a停止工作的解决办法
+                      </a>
+                    
+                      <a  href='/2014/09/11/Matlab-tips.html' class="list-group-item pjaxlink">
+                        Matlab科研小贴士
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#Linux">Linux</a>
+                      <span class="badge pull-right">5</span>
+                    </h4>
+                  </div>
+                  <div id="Linux" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/09/30/Linux4.html' class="list-group-item pjaxlink">
+                        Linux 4：磁盘与文件系统管理
+                      </a>
+                    
+                      <a  href='/2014/09/19/Linux3.html' class="list-group-item pjaxlink">
+                        Linux 3：文件与目录管理
+                      </a>
+                    
+                      <a  href='/2014/09/17/Linux2.html' class="list-group-item pjaxlink">
+                        Linux 2：文件权限与目录配置
+                      </a>
+                    
+                      <a  href='/2014/09/13/Linux.html' class="list-group-item pjaxlink">
+                        Linux 1：登陆与在线求助man page
+                      </a>
+                    
+                      <a  href='/2014/09/12/Linux-Problems.html' class="list-group-item pjaxlink">
+                        Linux 0：实际问题
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#Python">Python</a>
+                      <span class="badge pull-right">6</span>
+                    </h4>
+                  </div>
+                  <div id="Python" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/09/20/Learn-Python-Exercise-Six.html' class="list-group-item pjaxlink">
+                        Learn Python Exercise Six
+                      </a>
+                    
+                      <a  href='/2014/09/20/Learn-Python-Exercise-Seven.html' class="list-group-item pjaxlink">
+                        Learn Python Exercise Seven
+                      </a>
+                    
+                      <a  href='/2014/09/20/Learn-Python-Exercise-Five.html' class="list-group-item pjaxlink">
+                        Learn Python Exercise Five
+                      </a>
+                    
+                      <a  href='/2014/09/19/Learn-Python-Exercise-Three.html' class="list-group-item pjaxlink">
+                        Learn Python Exercise Three
+                      </a>
+                    
+                      <a  href='/2014/09/18/Learn-Python-Exercise-Two.html' class="list-group-item pjaxlink">
+                        Learn Python Exercise Two
+                      </a>
+                    
+                      <a  href='/2014/09/16/Learn-Python-Exercise-One.html' class="list-group-item pjaxlink">
+                        Learn Python Exercise One
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#Algorithms">Algorithms</a>
+                      <span class="badge pull-right">2</span>
+                    </h4>
+                  </div>
+                  <div id="Algorithms" class="panel-collapse collapse">
+                    
+                      <a  href='/2014/10/02/Learn-Algorithms-Ten.html' class="list-group-item pjaxlink">
+                        Learn Algorithms Ten - Dynamic programming
+                      </a>
+                    
+                      <a  href='/2014/09/27/Learn-Algorithms-One.html' class="list-group-item pjaxlink">
+                        Learn Algorithms One
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#MachineLearning">MachineLearning</a>
+                      <span class="badge pull-right">2</span>
+                    </h4>
+                  </div>
+                  <div id="MachineLearning" class="panel-collapse collapse">
+                    
+                      <a  href='/2015/02/04/Group-Meeting.html' class="list-group-item pjaxlink">
+                        大数据机器学习初探---南大李武军
+                      </a>
+                    
+                      <a  href='/2014/10/01/Alibaba-Big-Data.html' class="list-group-item pjaxlink">
+                        阿里巴巴大数据竞赛回顾与总结
+                      </a>
+                    
+                  </div>
+                </div>
+               
+                <div class="panel panel-info">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a data-toggle="collapse" data-toggle="collapse" data-parent="#accordion" href="#Git">Git</a>
+                      <span class="badge pull-right">1</span>
+                    </h4>
+                  </div>
+                  <div id="Git" class="panel-collapse collapse">
+                    
+                      <a  href='/2015/01/30/Git-Resources.html' class="list-group-item pjaxlink">
+                        Git常用命令速查表
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="col-md-13 col-lg-13 col-sm-13 col-xs-13 aside3">
+        <div id="container">
+          <div id="pjax">
+            <div class="row">
+  <div class="col-md-13 aside3-title">
+    <br>
+    <h2 id="#identifier">Learn Python Exercise Six</h2>
+    2014年09月20日
+  </div>
+  <div class="col-md-13 aside3-content">
+    <hr>
+    <div id="content">
+      <p>Data Structure:</p>
+
+<p>This session show how to use the list, set, tuple, dict, looping etc.</p>
+
+<p>learn_datastructure.py</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+__author__ = &quot;Huang Moyue&quot;
+__version__ = &quot;0.01&quot;
+__date__ = &quot;09/21/2014&quot;
+__copyright__ = &quot;Copyright 2014 Huang Moyue&quot;
+
+&quot;&quot;&quot;
+Data Type
+List example:
+[&quot;list1&quot;,&quot;list2&quot;,&quot;list3&quot;]
+
+list.append(x)
+Add an item to the end of the list; equivalent to a[len(a):] = [x].
+
+list.extend(L)
+Extend the list by appending all the items in the given list; equivalent to a[len(a):] = L.
+
+list.insert(i, x)
+Insert an item at a given position. The first argument is the index of the element before which to insert, so a.insert(0, x) inserts at the front of the list, and a.insert(len(a), x) is equivalent to a.append(x).
+
+list.remove(x)
+Remove the first item from the list whose value is x. It is an error if there is no such item.
+
+list.pop([i])
+Remove the item at the given position in the list, and return it. If no index is specified, a.pop() removes and returns the last item in the list. (The square brackets around the i in the method signature denote that the parameter is optional, not that you should type square brackets at that position. You will see this notation frequently in the Python Library Reference.)
+
+list.index(x)
+Return the index in the list of the first item whose value is x. It is an error if there is no such item.
+
+list.count(x)
+Return the number of times x appears in the list.
+
+list.sort(cmp=None, key=None, reverse=False)
+Sort the items of the list in place (the arguments can be used for sort customization, see sorted() for their explanation).
+
+list.reverse()
+Reverse the elements of the list, in place.
+&quot;&quot;&quot;
+def listType(params):
+    print(&quot;print list items below:&quot;)
+
+    for i in params:
+        print i, len(i)
+
+def my_reverse(x,y):
+    if x &gt; y:
+        return -1
+    if x &lt; y:
+        return 1
+    return 0
+
+def filter_func(x):
+    return x%2 != 0 and x%3 !=0
+
+def reduce_add(x,y):
+    return  x + y
+
+def map_add(x):
+    return x + x
+
+def char2int(str):
+    return {&#39;0&#39;: 0, &#39;1&#39;: 1, &#39;2&#39;: 2, &#39;3&#39;: 3, &#39;4&#39;: 4, &#39;5&#39;: 5, &#39;6&#39;: 6, &#39;7&#39;: 7, &#39;8&#39;: 8, &#39;9&#39;: 9}[str]
+
+def str2int(str):
+    return reduce(lambda x, y: x * 10 + y, map(char2int, str))
+
+&quot;&quot;&quot;
+Tuple:
+tup = (1,2,3,4,5)
+Very like to list. But tuple is immutable!
+&quot;&quot;&quot;
+def show_tuple_structure():
+
+    tup_one = 1,2,3,4,5
+    tup_two = 1235,&#39;tuple_item&#39;
+    tup_three = tup_one, tup_two
+    tup_list = ([1,2,3],[5,6,7])
+    tup_four = &#39;hello_tuple&#39;,
+
+    print &quot;Print tuple:&quot;
+    print tup_one
+    print tup_two
+    print tup_three
+    print tup_list
+    print tup_four
+
+&quot;&quot;&quot;
+Set:
+A set is an unordered collection with no duplicate elements. 
+Basic uses include membership testing and eliminating duplicate entries.
+Set objects also support mathematical operations like union, intersection, difference, and symmetric difference.
+set(list)
+&quot;&quot;&quot;
+def show_set_structure():
+    print &quot;set:&quot;
+    basket = [&#39;apple&#39;, &#39;orange&#39;, &#39;apple&#39;, &#39;pear&#39;, &#39;orange&#39;, &#39;banana&#39;]
+    print basket
+    set(basket)
+    print basket
+
+    set_a = set(&#39;abracadabra&#39;)
+    set_b = set(&#39;alacazam&#39;)
+    # use operations, monitor the set operations
+    print &quot;set_a, set_b:&quot;,set_a, set_b
+    print &quot;set_a - set_b:&quot;, set_a - set_b
+    print &quot;set_a | b:&quot;, set_a|set_b
+    print &quot;set_a &amp; set_b:&quot;, set_a&amp;set_b
+    print &quot;set_a ^ set_b:&quot;, set_a ^ set_b
+
+
+&quot;&quot;&quot;
+Data type
+Dictionary
+    It define key-value relationship. {key, value}
+    Example:
+    {&quot;server&quot;:&quot;huangmoyue&quot;, &quot;pwd&quot;:&quot;12345&quot;}
+&quot;&quot;&quot;
+
+def dictionaryType():
+    print(&quot;dic type:&quot;)
+
+    dic_a = {&quot;Server&quot;:&quot;huangmoyue&quot;,&quot;Pwd&quot;:&quot;861117&quot;}
+    dic_b = {&#39;jack&#39;: 4098, &#39;sape&#39;: 4139}
+
+    print dic_a.keys()
+    print dic_b[&quot;jack&quot;]
+
+    for key, value in dic_a.items():
+        print(&quot;;&quot;.join((key, value)))
+</code></pre></div>
+<p>testing_datastructure.py</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+__author__ = &quot;Huang Moyue&quot;
+__version__ = &quot;0.01&quot;
+__date__ = &quot;09/21/2014&quot;
+__copyright__ = &quot;Copyright 2014 Huang Moyue&quot;
+
+import unittest
+from unittest import TestCase
+
+from learnpy.learning_datastructure import listType
+from learnpy.learning_datastructure import my_reverse
+from learnpy.learning_datastructure import filter_func
+from learnpy.learning_datastructure import reduce_add
+from learnpy.learning_datastructure import map_add
+from learnpy.learning_datastructure import str2int
+from learnpy.learning_datastructure import show_tuple_structure
+from learnpy.learning_datastructure import show_set_structure
+from learnpy.learning_datastructure import dictionaryType
+
+class Test_DataType(TestCase):
+    def test_listtype(self):
+        test_list = [&quot;list1&quot;,&quot;list2&quot;,&quot;list3&quot;]
+        listType(test_list)
+
+    def test_list_inernal_function(self):
+        test_list = [66.25, 333, 333, 1, 1234.5]
+
+        #append 100 behind the test_list
+        test_list.append(100)
+        print &quot;append 100 behind:&quot;, test_list
+
+        #extend 
+        ex_list = [&quot;extend_item1&quot;, &quot;extend_item2&quot;]
+        test_list.extend(ex_list)
+        print &quot;extend two items:&quot;, test_list
+
+        #insert
+        test_list.insert(3,&quot;insert_item&quot;)
+        print &quot;insert one item:&quot;, test_list
+
+        #remove
+        test_list.remove(333)
+        print &quot;remove 333 from test_list:&quot;,test_list
+
+        #pop
+        test_list.pop()
+        print &quot;Use pop funtion:&quot;,test_list
+        test_list.pop(0)
+        print &quot;Use pop to remove 66.25:&quot;,test_list
+
+        #index
+        print &quot;Show index(0) position:&quot;, test_list.index(1)
+
+        #count
+        print &quot;Show the extend_item1 position:&quot;, test_list.count(&quot;extend_item1&quot;)
+
+        #sort
+        print &quot;Show before:&quot;,test_list
+        test_list.sort()
+        print &quot;Show sort after:&quot;,test_list
+
+        #sorted use user define function
+        print &quot;Show before:&quot;, test_list
+        sorted(test_list,my_reverse)
+        print &quot;Show my own sort function:&quot;,sorted(test_list,my_reverse)
+
+    #filter(function, sequence) returns a sequence consisting of those items from the sequence for which function(item) is true. If sequence is a string or tuple, the result will be of the same type; otherwise, it is always a list. 
+    #map(function, sequence) calls function(item) for each of the sequence’s items and returns a list of the return values. 
+    #reduce(function, sequence) returns a single value constructed by calling the binary function function on the first two items of the sequence, then on the result and the next item, and so on.
+    def test_functional_tools(self):
+        print &quot;Show how to use the filter:&quot;, filter(filter_func,range(2,25))
+        print &quot;Show how to use the reduece:&quot;,reduce(reduce_add, [1, 3, 5, 7, 9])
+        print &quot;Show how to use the map:&quot;, map(map_add, [1, 2, 3, 4, 5, 6, 7, 8, 9])
+        print &quot;Show how the map and reduece work together:&quot;, str2int(&quot;123456&quot;)
+
+
+    #List comprehensions
+    def test_list_comprehensions(self):
+        #The tranditional way to create the list
+
+        print &quot;List Comprehensions:&quot;
+        test_tra_list = []
+        for x in range(10):
+            test_tra_list.append(x)
+        print test_tra_list
+
+        #Obtain the same value in list
+        test_comprehensions_list = [x for x in range(10)]
+        print test_comprehensions_list
+
+        #Another case
+        test_comb_list = []
+        for x in [1,2,3]:
+            for y in [3,1,4]:
+                if x != y:
+                    test_comb_list.append((x,y))
+
+        print test_comb_list        
+
+        test_pre_comb_list = [(x,y) for x in [1,2,3] for y in [2,1,4] if x != y]
+        print test_pre_comb_list
+
+    #Nested List Comprehensions
+    def test_list_nested_compreh(self):
+        print &quot;nested List comprehension:&quot;
+        matrix = [
+                  [1,2,3,4],
+                  [5,6,7,8],
+                  [9,10,11,12],
+                  [13,14,15,16]
+                  ]
+        #Some matrix tranform methods:
+        tran_one = [[row[i] for row in matrix] for i in range(4)]
+        print &quot;tran_one:&quot;, tran_one
+
+        tran_two = zip(*matrix)
+        print &quot;tran_two:&quot;, tran_two
+
+        tran_three = []
+        for i in range(4):
+            tran_three.append([row[i] for row in matrix])
+        print &quot;tran_three&quot;, tran_three
+
+        tran_four = []
+        for i in range(4):
+            tran_four_row = []
+            for row in matrix:
+                tran_four_row.append(row[i])
+            tran_four.append(tran_four_row)
+        print &quot;tran_four:&quot;, tran_four
+
+    #Use del to remove the list item
+    def test_del(self):
+        print &quot;del item:&quot;
+        test_list = [&quot;list1&quot;,&quot;list2&quot;,&quot;list3&quot;]
+        print test_list
+        del test_list[0]
+        print test_list
+
+        del test_list       
+
+    # tuple
+    def test_tuple(self):
+        show_tuple_structure()
+
+    #set
+    def test_set(self):
+        show_set_structure()
+        #set comprehensions
+        test_set_compre = {x for x in &#39;abracadabra&#39; if x not in &#39;abc&#39;}
+        print &quot;set comprehensions:&quot;,test_set_compre
+
+    #Dict
+    def test_dict(self):
+        dictionaryType()
+        #The dict() constructor builds dictionaries directly from sequences of key-value pairs
+        print &quot;Use the dict() constructor to build the dict:&quot;
+        print dict(sape=4139, guido=4127, jack=4098)
+        print dict([(&#39;sape&#39;, 4139), (&#39;guido&#39;, 4127), (&#39;jack&#39;, 4098)])
+        print {x: x**2 for x in (2, 4, 6)}
+
+    #Looping Techniques
+    def test_looping(self):
+        print &quot;test Loop:&quot;
+        print &quot;Use Enumerate:&quot;
+        for i, v in enumerate([&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]):
+            print i, v
+
+        print &quot;show two or more sequence one time:&quot;
+        questions = [&#39;name&#39;, &#39;quest&#39;, &#39;favorite color&#39;]
+        answers = [&#39;lancelot&#39;, &#39;the holy grail&#39;, &#39;blue&#39;]
+        for q, a in zip(questions, answers):
+            print &quot;what&#39;s your {0}? It is {1}.&quot;.format(q,a)
+
+        print &quot;Show reverse sequence: &quot;
+        for i in reversed(range(1,20,2)):
+            print i
+
+        print &quot;Show sorted sequence:&quot;
+        basket = [&#39;apple&#39;, &#39;orange&#39;, &#39;apple&#39;, &#39;pear&#39;, &#39;orange&#39;, &#39;banana&#39;]
+        for s in sorted(set(basket)):
+            print s
+
+        print &quot;Show the dict item&#39;s key-value:&quot;
+        dic_a = {&quot;Server&quot;:&quot;huangmoyue&quot;,&quot;Pwd&quot;:&quot;861117&quot;}
+        for k, v in dic_a.iteritems():
+            print k, v
+            print &quot;;&quot;.join((k,v))
+
+    #slicing operations
+    def test_slicing(self):
+        print &quot;Use slicing:&quot;
+        words = [&#39;cat&#39;, &#39;window&#39;, &#39;defenestrate&#39;]
+        print words[:]
+        print words[2:3]
+        print words[-2:-1]
+
+
+if __name__ == &#39;__main__&#39;:
+    unittest.main()
+</code></pre></div>
+    </div>
+    <hr>
+    <div id="disqus_thread">
+  <button type="button" name="painterlin" class="btn btn-default show-commend">	
+  	<i class="fa fa-comment-o fa-lg" style="color: #16a095;"></i>     <!-- 修改显示评论按钮图标-->
+  </button>
+</div>
+
+  </div>
+  <!-- 目录 -->
+  <div id="content_table" style="position:fixed;right:20px;top:120px;display:none;">
+    <div class="panel panel-success">
+      <div class="panel-body" id="nav"></div>
+    </div>
+  </div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="position:fixed;right:15px;top:62px;">
+  <button id="content_btn" class="btn btn-primary" style="width:43px; height:34px;">
+    <i class="fa fa-lg fa-plus"></i>
+  </button>
+</div>
+<div style="position:fixed;right:15px;top:20px;">
+  <button id="nav_btn" class="btn btn-primary">
+    <i class="fa fa-lg fa-navicon"></i>
+  </button>
+</div>
+<script type="text/javascript" src="/public/js/jquery.js"></script>
+<script type="text/javascript" src="/public/js/bootstrap.js"></script>
+<script src="/public/js/jquery.pjax.js"></script>
+<script src="/public/js/prettify/prettify.js"></script>
+<script src="/public/js/base.js"></script>
+<!--
+<script src="/public/js/jquery.scrollUp.js"></script>
+-->
+<script>
+    $('a[href="#读书"]').tab('show');
+</script>
+
+
+<!--button是右上方导航和显示目录的按钮-->
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-54262064-1', 'painterlin.com');
+  ga('send', 'pageview');
+</script>
+</body>
+</html>
