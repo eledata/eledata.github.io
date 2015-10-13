@@ -11,20 +11,15 @@ author:
 # 站点信息
 title: 黄默悦的博客
 description: My personal blog
-url: http://huangmoyue点github点io
+url: http://eledata.github.io
 
 # gavatar头像及Favicon
 gavatar: /public/img/deer3.png
 favicon: /public/img/deer3.png
 
-# google analytics 设置
-ga:
-  id: UA-54262064-1 
-  url: painterlin.com
-
 # disqus 设置
 disqus:
-  shortname: painterlin
+  shortname: ele_cloud
 
 # 主题设置，自动激活某个标签
 active: 读书
