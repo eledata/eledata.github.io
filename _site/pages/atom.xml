@@ -6,6 +6,28 @@
     <description>My personal blog</description>
     
       <item>
+        <title>Advance SQL 系列之系统管理</title>
+        <link>http://eledata.github.io/2015/10/14/Oracle-SQL.html</link>
+        <guid isPermaLink="true">http://eledata.github.io/2015/10/14/Oracle-SQL.html</guid>
+        <pubDate>Wed, 14 Oct 2015 00:00:00 +0800</pubDate>
+        <description>&lt;h2&gt;表空间管理&lt;/h2&gt;
+
+&lt;h3&gt;增加表空间&lt;/h3&gt;
+
+&lt;p&gt;在数据增长量不大的情况下，我们不大会碰到表空间不够用的情况。但是，在很多场景，数据的体量是不断的增长的。会不断的侵蚀我们分配的表空间，此时会出现
+表空间不够用的情况，那么就需要我们增加表空间的大小。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;#增加一个表空间文件，大小为20000M
+ALTER TABLESPACE SYSTEM ADD DATAFILE &amp;#39;C:\***\SYSTEM03.DBF&amp;#39; SIZE 20000M;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;查询表空间大小&lt;/h3&gt;
+
+&lt;p&gt;在Oracle中，表空间的信息都储存在&lt;code&gt;DBA_DATA_FILES&lt;/code&gt;。我们可以通过此表来算出表空间文件的大小。&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;#查询表空间大小
+SELECT TABLESPACE_NAME, ROUND(SUM(BYTES/(1024*1024)),0) AS TS_SIZE FROM DBA_DATA_FILES GROUP BY TABLESPACE_NAME;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      </item>
+    
+      <item>
         <title>从二次型最优化问题中理解矩阵特征值的意义</title>
         <link>http://eledata.github.io/2015/09/12/Intuition-of-Eigen-Value.html</link>
         <guid isPermaLink="true">http://eledata.github.io/2015/09/12/Intuition-of-Eigen-Value.html</guid>
@@ -2480,112 +2502,6 @@ chmod       #改变文件的权限
 
 &lt;p&gt;Markdown文件的易读性却因此下降了很多。&lt;/p&gt;
 </description>
-      </item>
-    
-      <item>
-        <title>Learn Python Exercise One</title>
-        <link>http://eledata.github.io/2014/09/16/Learn-Python-Exercise-One.html</link>
-        <guid isPermaLink="true">http://eledata.github.io/2014/09/16/Learn-Python-Exercise-One.html</guid>
-        <pubDate>Tue, 16 Sep 2014 00:00:00 +0800</pubDate>
-        <description>&lt;p&gt;Learn the argv and data input/output&lt;/p&gt;
-
-&lt;p&gt;Exp 1:&lt;/p&gt;
-
-&lt;p&gt;Using the argv. It is a argument variable. &lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;#39;&amp;#39;&amp;#39;
-Created on Sep 17, 2014
-
-@author: MHuang1
-&amp;#39;&amp;#39;&amp;#39;
-
-#!/usr/bin/env python # Means the code can be use in diff plats
-# -*- coding: utf-8 -*- 
-
-
-from sys import argv
-
-script, first, second,third = argv
-
-print &amp;quot;The script is called:&amp;quot;, script
-print &amp;quot;Your first variable is:&amp;quot;, first
-print &amp;quot;Your second variable is:&amp;quot;, second
-print &amp;quot;Your third variable is:&amp;quot;, third
-
-#Result
-# python ex13.py first 2nd 3rd
-# The script is called: learning_python_sys_argv.py
-# Your first variable is: first
-# Your second variable is: 2nd
-# Your third variable is: 3rd
-
-##################################################
-from sys import argv
-
-def test_argv():
-
-    args = argv
-    if (len(args) == 1):
-        print args[0]
-    elif len(args) == 2:
-        print args[0], args[1]
-    else:
-        print &amp;quot;Too much values!&amp;quot;
-
-if __name__ == &amp;#39;__main__&amp;#39;:
-    test_argv()
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Exp 2:&lt;/p&gt;
-
-&lt;p&gt;Using the rawinput function to capture the user input info.raw_input() default is string or char. If you want to input&lt;/p&gt;
-
-&lt;p&gt;int. Shoud add int(raw_input(input)) outside.&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;&amp;#39;&amp;#39;&amp;#39;
-Created on Sep 17, 2014
-
-@author: MHuang1
-&amp;#39;&amp;#39;&amp;#39;
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-from sys import argv
-
-# argv is a argument variable. argv[0]: script name, argv[1]: the name we provide.
-script,user_name = argv
-prompt = &amp;#39;&amp;gt; &amp;#39; #just a string need to ini.
-
-print &amp;quot;Hi %s, I&amp;#39;m the %s script.&amp;quot; %(user_name,script)
-print &amp;quot;I&amp;#39;d like to ask you a few questions.&amp;quot;
-print &amp;quot;Do you like me %s?&amp;quot;%user_name
-likes = raw_input(prompt)
-
-print &amp;quot;Where do you live %s?&amp;quot;%user_name
-lives = raw_input(prompt)
-
-print &amp;quot;What kind of computer do you have?&amp;quot;
-computer = raw_input(prompt)
-
-print &amp;quot;&amp;quot;&amp;quot;
-Alright, so you said %r about like me.
-You live in %r. Not sure where that is.
-And you have a %r computer. Nice.
-&amp;quot;&amp;quot;&amp;quot;%(likes, lives, computer)
-
-
-#result
-# C:&amp;gt;python learning_rawinput.py raw_function
-# Hi raw_function, I&amp;#39;m the learning_rawinput.py script.
-# I&amp;#39;d like to ask you a few questions.
-# Do you like me raw_function?
-# &amp;gt;yes
-# Where do you live raw_function?
-# &amp;gt;xiamen
-# What kind of computer do you have?
-# &amp;gt;dell
-# 
-# Alright, so you said &amp;#39;yes&amp;#39; about like me.
-# You live in &amp;#39;xiamen&amp;#39;. Not sure where that is.
-# And you have a &amp;#39;dell&amp;#39; computer. Nice.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
       </item>
     
   </channel>
