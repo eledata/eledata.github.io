@@ -25,13 +25,13 @@ tags: 统计
 
 2.极大似然估计
 
-原理：一个随机试验如有若干个可能的结果A，B，C，…。若在仅仅作一次试验中，结果A出现，则一般认为试验条件对A出现有利，也即A出现的概率很大。一般地，事件A发生的概率与参数theta相关，A发生的概率记为P(A，θ)，则theta的估计应该使上述概率达到最大，这样的θ顾名思义称为极大似然估计。
+原理：一个随机试验如有若干个可能的结果A，B，C，…。若在仅仅作一次试验中，结果A出现，则一般认为试验条件对A出现有利，也即A出现的概率很大。一般地，事件A发生的概率与参数θ相关，A发生的概率记为P(A，θ)，则θ的估计应该使上述概率达到最大，这样的θ顾名思义称为极大似然估计。
 
 	#求解极大似然估计的方法
-	（1）写出似然函数；
-	（2）对似然函数取对数，并整理；
-	（3）求导数；
-	（4）解似然方程 。
+	（1）写出似然函数
+	（2）对似然函数取对数，并整理
+	（3）求导数
+	（4）解似然方程
 
 ####估计量优良准则
 	1. 无偏估计 --E(Ô) = θ # 一阶样本原点矩估计都是无偏估计，二阶属于渐进无偏估计。
@@ -40,47 +40,92 @@ tags: 统计
 
 
 ###区间估计
-区间估计（interval estimation）是从点估计值和抽样标准误出发，按给定的概率值建立包含待估计参数的区间.其中这个给定的概率值称为置信度或置信水平(confidence level），这个建立起来的包含待估计参数的区间称为置信区间（confidence interval），指总体参数值落在样本统计值某一区内的概率；而置信区间是指在某一置信水平下，样本统计值与总体参数值间误差范围。置信区间越大，置信水平越高。划定置信区间的两个数值分别称为置信下限(lower confidence limit,lcl）和置信上限（upper confidence limit,ucl)
+区间估计（interval estimation）是从点估计值和抽样标准误出发，按给定的概率值建立包含待估计参数的区间。
 
-R提供许多函数来验证二元数据，例如：计算`协方差的函数: cov(x, y = NULL, use = "everything", method = c("pearson", "kendall", "spearman"))`
+其中这个给定的概率值(1-α)称为置信度或置信水平(confidence level）`指总体参数值落在样本统计值某一区内的概率`。置信区间是指在某一置信水平下，样本统计值与总体参数值间误差范围。`置信区间越大，置信水平越高。`划定置信区间的两个数值分别称为`置信下限(lower confidence limit,lcl）和置信上限（upper confidence limit,ucl)`
 
-`计算相关性系数的函数： cor(x, y = NULL, use = "everything",method = c("pearson", "kendall", "spearman"))`
+#### 一个正态总体的情况
+#####均值μ和σ的区间估计
+1. σ已知时μ的置信区间与σ未知时μ的置信区间两种情况：
 
-	#二元数据相关性计算
-	> ore<-data.frame(
-	+      x=c(67, 54, 72, 64, 39, 22, 58, 43, 46, 34),
-	+      y=c(24, 15, 23, 19, 16, 11, 20, 16.1, 17, 13)
-	+ )
-	> ore.mx<-mean(ore$x); ore.mx
-	[1] 49.9 #平均数
-	> ore.my<-mean(ore$y); ore.my
-	[1] 17.41
-	> ore.s<-cov(ore); ore.s
-			  x        y  #协方差矩阵
-	x 252.76667 60.52333   Sxx	Sxy
-	y  60.52333 17.12544   Sxy  Syy
-	> ore.r<-cor(ore); ore.r
-			 x        y   #相关性系数矩阵
-	x 1.000000 0.919903   ρXX  ρXY
-	y 0.919903 1.000000	  ρXY  ρYY
-
-####接下来有个问题，样本的相关系数与总体的相关系数有什么关系？
-有这么几种方法：
-
-- pearson 相关性检验 `cor.test(x, y,alternative = c("two.sided", "less", "greater"),method = c("pearson", "kendall", "spearman"),exact = NULL, conf.level = 0.95, continuity = FALSE, ...)`
-- kendall 相关性检验
-
-也可以用鲁宾废除的总体相关系数的区间估计的近似逼近公式
-
-	ruben.test<-function(n, r, alpha=0.05){
-	   u<-qnorm(1-alpha/2)
-	   r_star<-r/sqrt(1-r^2)
-	   a<-2*n-3-u^2; b<-r_star*sqrt((2*n-3)*(2*n-5))
-	   c<-(2*n-5-u^2)*r_star^2-2*u^2
-	   y1<-(b-sqrt(b^2-a*c))/a
-	   y2<-(b+sqrt(b^2-a*c))/a
-	   data.frame(n=n, r=r, conf=1-alpha, 
-		  L=y1/sqrt(1+y1^2), U=y2/sqrt(1+y2^2))
+	#用R代码来解释
+	interval_estimate_m <- function(x, sigma = -1, alpha = 0.05){
+	    n <- length(x)
+	    m <- mean(x)
+	    
+	    if(sigma >= 0){
+	      tmp <- (sigma/sqrt(n))*qnorm(1 - alpha/2) #σ 已知的情况
+	      df <- n
+	    }
+	    else{
+	      tmp <- (sd(x)/sqrt(n))*qt(1 - alpha/2, n-1) # σ 未知的情况，用样本方差
+	      df <- n - 1
+	    }
+	    data.frame(mean = m, df = df, a = m - tmp, b = m + tmp)
 	}
-	source("ruben.R")
-	ruben(....)
+2. μ已知时σ的置信区间与μ未知时σ的置信区间两种情况：
+
+	#用R代码来解释
+	interval_estimate_var <- function(x, m = Inf, alpha = 0.05){
+	  n <- length(x)
+	  
+	  if(m < Inf){
+	    S <- sum((x-m)^2)/n
+	    df <- n
+	  }
+	  else{
+	    S <- sum((x-m)^2)/(n - 1)
+	    df <- n - 1
+	  }
+	  a <- df*S/qchisq(1 - alpha/2, df)
+	  b <- df*S/dchisq(alpha/2, df)
+	  data.frame(var = S, df = df, a = a, b = b)
+	}
+
+####两个正态总体的情况
+1.μ1-μ2 的情况。
+	
+	#用R代码来理解
+	interval_estimate_mm <- function(x, y, sigma = c(-1, -1), var.equal = FALSE, alpha = 0.05){
+		n1 <- length(x)
+		n2 <- length(y)
+		xm <- mean(x)
+		ym <- mean(y)
+		if (all(sigma >= 0 )){
+		  tmp <- qnorm(1-alpha/2)*sqrt(sigma[1]^2/n1 + sigma[2]^2/n2) # σ可知
+		  df <- n1 + n2
+		}else{ #σ 未知
+		  if(var.equal == TRUE){ # σ 未知但知道其相等
+		    sw <- sqrt(((n1-1)*var(x)^2 + (n2-1)*var(y)^2)/(n1 + n2 -2))
+		    tmp <- qt(1-alpha/2, n1+n2-2)*sqrt(1/n1 + 1/n2)*sw
+		    df <- n1 + n2 -2
+		  }else{
+		    S1 <- var(x)
+		    S2 <- var(y)
+		    nu <- (S1^2/n1 + S2^2/n2)^2/((S1)^4/(n1^2*(n1-1)) + (S2)^4/(n2^2*(n2-1)))
+		    tmp <- qt(1-alpha/2,nu)*sqrt(S1^2/n1 + S2^2/n2)
+		    df <- nu
+		  }
+		}
+		data.frame(mean  = xm - ym, df = df, a = xm-ym-tmp, b = xm-ym + tmp)
+	}
+
+
+2. 方差比：σ1^2/σ2^2 的情况
+	
+	#用R代码来理解
+	interval_var2<-function(x,y, 
+	   mu=c(Inf, Inf), alpha=0.05){ 
+	   n1<-length(x); n2<-length(y) 
+	   if (all(mu<Inf)){
+	      Sx2<-1/n1*sum((x-mu[1])^2); Sy2<-1/n2*sum((y-mu[2])^2)
+	      df1<-n1; df2<-n2
+	   }
+	   else{
+	      Sx2<-var(x); Sy2<-var(y); df1<-n1-1; df2<-n2-1
+	   }
+	   r<-Sx2/Sy2
+	   a<-r/qf(1-alpha/2,df1,df2)
+	   b<-r/qf(alpha/2,df1,df2)
+	   data.frame(rate=r, df1=df1, df2=df2, a=a, b=b)
+	}
