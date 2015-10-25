@@ -2,9 +2,9 @@
 layout: post
 keywords: 统计量描述
 description: 统计量描述
-title: "R与统计建模--统计量描述"
-categories: 统计
-tags: 统计
+title: "R 入门"
+categories: R
+tags: R
 ---
 
 ##统计量描述

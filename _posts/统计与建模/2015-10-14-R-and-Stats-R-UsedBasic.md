@@ -1,14 +1,14 @@
 ---
 layout: post
-keywords: 假设检验
-description: 假设检验
-title: "R与统计建模--假设检验"
+keywords: 统计量描述
+description: 统计量描述
+title: "R与统计建模--统计量描述"
 categories: 统计
 tags: 统计
 ---
 
-##二元数据相关性检验
-###相关性系数
+##统计量描述
+###位置统计量
 对于样本的二元数据，我们可以利用相关性系数r。
 
 `r 公式：ρXY = cov(X,Y)/sqrt(var(X)*var(Y))`。
