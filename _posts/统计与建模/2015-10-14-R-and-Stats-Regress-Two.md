@@ -2,22 +2,16 @@
 layout: post
 keywords: 回归分析
 description: 回归分析
-title: "R与统计建模--回归分析（一）"
+title: "R与统计建模--回归分析（二）"
 categories: 统计
 tags: 统计
 ---
 
 ##回归分析
-###回归分析研究的内容
 
-- 确定Y与X1，X2...间的定量关系表达式。称之为回归方程
-- 对求得的回归方程的可信度进行检验
-- 判断自变量Xj对Y的有无影响
-- 利用所求的的回归方程进行预测和控制
+###多元线性回归
 
-###一元线性回归
-
-一元线性回归方程：
+多元线性回归方程：
 ![1](/public/img/posts/huiguifenxiyiyuanxianxing.png)
 
 
