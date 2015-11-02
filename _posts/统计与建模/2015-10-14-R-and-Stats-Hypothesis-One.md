@@ -2,7 +2,7 @@
 layout: post
 keywords: 假设检验
 description: 假设检验之正态参数的假设检验
-title: "R与统计建模--假设检验（二）"
+title: "R与统计建模--假设检验（一）"
 categories: 统计
 tags: 统计
 ---
