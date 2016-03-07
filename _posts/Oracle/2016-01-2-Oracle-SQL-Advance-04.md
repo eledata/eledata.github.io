@@ -7,9 +7,9 @@ categories: Oracle
 tags: Oracle
 ---
 
-##Oracle 批量处理Insert Into Sql代码
+# Oracle 批量处理Insert Into Sql代码
 
-###问题场景###
+## 问题场景
 
 由于物料团队的需求，需要定期更新物料的版本号。一次insert的sql语句条数在90万条左右，sql语句的生成通过神奇的excel加工。
 ![1](/public/img/posts/2016-03-07_insert_into1.jpg)
