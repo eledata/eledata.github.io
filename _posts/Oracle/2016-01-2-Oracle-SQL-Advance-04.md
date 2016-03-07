@@ -26,3 +26,11 @@ tags: Oracle
 利用sqlplus，直接使用@ file path.sql.惊喜不断，大概每秒1000条的insert速度，直接给好评了。原因是前台使用多线程来insert的，所以速度巨快。。
 	
 	sqlplus username/password@servicename @c:\yourfile.sql
+
+本篇完结！
+
+参考文献
+
+1.http://polyangel.iteye.com/blog/1416586
+
+@This site is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License@
