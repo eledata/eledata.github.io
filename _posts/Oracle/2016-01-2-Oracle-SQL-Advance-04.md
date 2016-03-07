@@ -7,21 +7,22 @@ categories: Oracle
 tags: Oracle
 ---
 
-##表空间管理
-###增加表空间
-在数据增长量不大的情况下，我们不大会碰到表空间不够用的情况。但是，在很多场景，数据的体量是不断的增长的。会不断的侵蚀我们分配的表空间，此时会出现
-表空间不够用的情况，那么就需要我们增加表空间的大小。
+##Oracle 批量处理Insert Into Sql代码
+###问题场景
+由于物料团队的需求，需要定期更新物料的版本号。一次insert的sql语句条数在90万条左右，sql语句的生成通过神奇的excel加工。
+![1](/public/img/posts/2016-03-07_insert_into1.jpg)
+
+	#大概90万条左右
+	INSERT INTO INV_SAP_MATLSE_SRCH VALUES ('0001-1126','#');
+	INSERT INTO INV_SAP_MATLSE_SRCH VALUES ('0001-1144','');
+	INSERT INTO INV_SAP_MATLSE_SRCH VALUES ('0002-9021','**');
+	INSERT INTO INV_SAP_MATLSE_SRCH VALUES ('0002-9027','**');
+
+###第一次尝试
+通过Sql Developer客户端，直接打开sql文件，接近50M的文件，打开巨慢，之后执行过程，崩溃，崩溃有没有。。。。。。
 
 
-	#增加一个表空间文件，大小为20000M
-	ALTER TABLESPACE SYSTEM ADD DATAFILE 'C:\***\SYSTEM03.DBF' SIZE 20000M;
-
-###查询表空间大小
-在Oracle中，表空间的信息都储存在`DBA_DATA_FILES`。我们可以通过此表来算出表空间文件的大小。
-
-
-	#查询表空间大小
-	SELECT TABLESPACE_NAME, ROUND(SUM(BYTES/(1024*1024)),0) AS TS_SIZE FROM DBA_DATA_FILES GROUP BY TABLESPACE_NAME;
-
+###第二次尝试
+利用sqlplus，直接使用@ file path.sql.惊喜不断，大概每秒1000条的insert速度，直接给好评了。原因是前台使用多线程来insert的，所以速度巨快。。
 	
-
+	sqlplus username/password@servicename @c:\yourfile.sql
