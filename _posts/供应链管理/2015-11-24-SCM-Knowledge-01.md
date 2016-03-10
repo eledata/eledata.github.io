@@ -2,7 +2,7 @@
 layout: post
 keywords: 供应链
 description: 供应链
-title: "供应链--" 
+title: "供应链理论体系" 
 categories: SCM
 tags: 供应链
 ---
@@ -27,3 +27,9 @@ tags: 供应链
 
 ### 六个策略
 	供应链优化的六个策略：缩短环节、缩减品种、分类并差异化，合并以规模化、信息共享、提高运作频率。这里是指所有供应链优化不外乎六个策略及其组合。列举六个策略不是难事，但是要说所有的供应链优化策略总共就这六个策略，则不是一件容易的事情。
+
+参考文献
+
+1.http://www.logclub.com/forum.php
+
+@This site is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License@
