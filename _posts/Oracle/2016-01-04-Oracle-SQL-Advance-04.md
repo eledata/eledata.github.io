@@ -20,12 +20,12 @@ tags: Oracle
 	INSERT INTO INV_SAP_MATLSE_SRCH VALUES ('0002-9021','**');
 	INSERT INTO INV_SAP_MATLSE_SRCH VALUES ('0002-9027','**');
 
-###第一次尝试###
+### 第一次尝试
 
 通过Sql Developer客户端，直接打开sql文件，接近50M的文件，打开巨慢，之后执行过程，崩溃，崩溃有没有。。。。。。
 
 
-###第二次尝试###
+### 第二次尝试
 
 利用sqlplus，直接使用@ file path.sql.惊喜不断，大概每秒1000条的insert速度，直接给好评了。原因是前台使用多线程来insert的，所以速度巨快。。
 	
