@@ -7,7 +7,7 @@ categories: Oracle
 tags: Oracle
 ---
 
-##子查询WITH AS
+### 子查询WITH AS
 使用WITH AS 语句可以为一个子查询语句块定义一个名称，使用这个子查询名称可以在查询语句的很多地方引用这个子查询。Oracle 数据库像对待内联视图或临时表一样对待被引用的子查询名称，从而起到一定的优化作用。
 
 
@@ -59,5 +59,9 @@ tags: Oracle
 	  (SELECT * FROM B
 	  )
 
-	
+本篇完结！
 
+参考文献
+无
+
+@This site is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License@
