@@ -7,15 +7,15 @@ categories: 统计
 tags: 统计
 ---
 
-##回归分析
-###回归分析研究的内容
+## 回归分析
+### 回归分析研究的内容
 
 - 确定Y与X1，X2...间的定量关系表达式。称之为回归方程
 - 对求得的回归方程的可信度进行检验
 - 判断自变量Xj对Y的有无影响
 - 利用所求的的回归方程进行预测和控制
 
-###一元线性回归
+### 一元线性回归
 
 一元线性回归方程：
 ![1](/public/img/posts/huiguifenxiyiyuanxianxing.png)
@@ -187,4 +187,6 @@ tags: 统计
 参考文献
 
 1.《统计建模与R》
+
+@This site is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License@
 

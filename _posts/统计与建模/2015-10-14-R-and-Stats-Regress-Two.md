@@ -7,9 +7,9 @@ categories: 统计
 tags: 统计
 ---
 
-##回归分析
+## 回归分析
 
-###多元线性回归
+### 多元线性回归
 
 多元线性回归方程：
 ![1](/public/img/posts/huiguifenxiyiyuanxianxing.png)
@@ -178,7 +178,10 @@ tags: 统计
 2. 对于求解出来的方程式进行验证，看看残差的情况，有没有异常的残差点。
 3. 最后除去残差，重新计算方程式。
 
+本篇完结！
+
 参考文献
 
 1.《统计建模与R》
 
+@This site is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License@

@@ -7,8 +7,8 @@ categories: 统计
 tags: 统计
 ---
 
-##二元数据相关性检验
-###相关性系数
+## 二元数据相关性检验
+### 相关性系数
 对于样本的二元数据，我们可以利用相关性系数r。
 
 `r 公式：ρXY = cov(X,Y)/sqrt(var(X)*var(Y))`。
@@ -45,7 +45,7 @@ R提供许多函数来验证二元数据，例如：计算`协方差的函数: c
 	x 1.000000 0.919903   ρXX  ρXY
 	y 0.919903 1.000000	  ρXY  ρYY
 
-####接下来有个问题，样本的相关系数与总体的相关系数有什么关系？
+#### 接下来有个问题，样本的相关系数与总体的相关系数有什么关系？
 有这么几种方法：
 
 - pearson 相关性检验 `cor.test(x, y,alternative = c("two.sided", "less", "greater"),method = c("pearson", "kendall", "spearman"),exact = NULL, conf.level = 0.95, continuity = FALSE, ...)`
@@ -106,4 +106,10 @@ R提供许多函数来验证二元数据，例如：计算`协方差的函数: c
 	 -0.62143616  0.02704248
 	sample estimates:
 		   cor 
-	-0.3365052 
+	-0.3365052
+	
+参考文献
+
+1.《统计建模与R》
+
+@This site is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License@

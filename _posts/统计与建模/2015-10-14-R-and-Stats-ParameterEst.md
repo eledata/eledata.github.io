@@ -6,6 +6,7 @@ title: "R与统计建模--参数估计"
 categories: 统计
 tags: 统计
 ---
+## 参数估计
 
 1. 矩法估计
 
@@ -29,19 +30,19 @@ tags: 统计
 	（3）求导数
 	（4）解似然方程
 
-####估计量优良准则
+#### 估计量优良准则
 	1. 无偏估计 --E(Ô) = θ # 一阶样本原点矩估计都是无偏估计，二阶属于渐进无偏估计。
 	2. 有效性 -- Var(Ô1) > Var(Ô2), 那么认为Ô1 比 Ô2 有效。
 	3. 一致性 -- lim P{|Ô-θ| < ε} = 1
 
 
-###区间估计
+### 区间估计
 区间估计（interval estimation）是从点估计值和抽样标准误出发，按给定的概率值建立包含待估计参数的区间。
 
 其中这个给定的概率值(1-α)称为置信度或置信水平(confidence level）`指总体参数值落在样本统计值某一区内的概率`。置信区间是指在某一置信水平下，样本统计值与总体参数值间误差范围。`置信区间越大，置信水平越高。`划定置信区间的两个数值分别称为`置信下限(lower confidence limit,lcl）和置信上限（upper confidence limit,ucl)`
 
 #### 一个正态总体的情况
-#####均值μ和σ的区间估计
+##### 均值μ和σ的区间估计
 1. σ已知时μ的置信区间与σ未知时μ的置信区间两种情况：
 
 		#用R代码来解释
@@ -79,7 +80,7 @@ tags: 统计
 		  data.frame(var = S, df = df, a = a, b = b)
 		}
 
-####两个正态总体的情况
+#### 两个正态总体的情况
 1.μ1-μ2 的情况。
 	
 		#用R代码来理解
@@ -126,3 +127,9 @@ tags: 统计
 		   b<-r/qf(alpha/2,df1,df2)
 		   data.frame(rate=r, df1=df1, df2=df2, a=a, b=b)
 		}
+
+参考文献
+
+1.《统计建模与R》
+
+@This site is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 License@
