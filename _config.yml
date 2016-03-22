@@ -27,7 +27,7 @@ active: 读书
 # 首页除了最新文章外显示分类
 cates: 
   - DATA
-  - SCM
+  - 统计
 
 # 中文本地化
 locals:
