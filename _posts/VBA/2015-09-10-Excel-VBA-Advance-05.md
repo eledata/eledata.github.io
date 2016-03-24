@@ -32,7 +32,9 @@ tags: DATA
 	Sheet3.Range("A1:A10").Activate
 
 5. Set rng = Sheet1.Range("A65536").End(xlUp)：行列最后一个非空单元格
+
 6. Sheet1.UsedRange.Rows.Count：算出整个Sheet内，已使用的Row的数目
+
 7. 查找单元格
 
 	'使用对话框，查找工作表中特定的内容单元格。
@@ -85,6 +87,7 @@ tags: DATA
     End With
 
 9. 使用Range对象的Replace方法：Range("A1:A5").Replace "通州", "南通"
+
 10. 使用Copy:
 
 	Application.DisplayAlerts = False
