@@ -14,17 +14,17 @@ tags: DATA
 Worksheet_SelectionChange VBA 内置的函数：
 
 	Private Sub Worksheet_SelectionChange(ByVal Target As Range)  '类似单击事件
-	Application.EnableEvents = False
-	   If Target.Column = 1 And Target.Row >= 2 And Target.Row <= 9 And Target.Cells.Count = 1 Then
-	         If Cells(Target.Row, 2) = "√" Then
-	            Cells(Target.Row, 2) = ""
-	            Cells(Target.Row, 2).Select
-	         Else
-	            Cells(Target.Row, 2) = "√"
-	            Cells(Target.Row, 2).Select
-	         End If
-	   End If
-	Application.EnableEvents = True
+		Application.EnableEvents = False
+		   If Target.Column = 1 And Target.Row >= 2 And Target.Row <= 9 And Target.Cells.Count = 1 Then
+		         If Cells(Target.Row, 2) = "√" Then
+		            Cells(Target.Row, 2) = ""
+		            Cells(Target.Row, 2).Select
+		         Else
+		            Cells(Target.Row, 2) = "√"
+		            Cells(Target.Row, 2).Select
+		         End If
+		   End If
+		Application.EnableEvents = True
 	End Sub
 
 ### 双击函数
