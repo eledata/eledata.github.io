@@ -13,29 +13,29 @@ tags: DATA
 
 ### 用法如下：
 
-1. Range(Cell1,Cell2): 返回一个单元格，或是单元格区域。	
+Range(Cell1,Cell2): 返回一个单元格，或是单元格区域。	
 
 	Sheet1.Range("A3:F6").Select
 
-2. Cells(RowIndex, ColumnIndex)
+Cells(RowIndex, ColumnIndex)
 
 	For i = 1 To 100
 	 Sheet2.Cells(i, 1).Value = i '循环从1到100，填入A1-100.
 	Next
 
-3. Offset(Rowoffset,Coloffset):返回一个基于引用的Range对象的单元格区域,正值，向下偏移，负值，向上偏移。
+Offset(Rowoffset,Coloffset):返回一个基于引用的Range对象的单元格区域,正值，向下偏移，负值，向上偏移。
 
-4. Activate：在Excel中，我们在同一时间只能操作一个Sheet，所以也就是在界面上激活一个Sheet。那么在VBA里面，我们就需要用到Activate函数，来帮助我们在不同的Sheet进行切换。
+Activate：在Excel中，我们在同一时间只能操作一个Sheet，所以也就是在界面上激活一个Sheet。那么在VBA里面，我们就需要用到Activate函数，来帮助我们在不同的Sheet进行切换。
 	
 	'当前活动的Sheet 是Sheet2.要操作Sheet3，就要提前激活
 	Sheet3.Activate
 	Sheet3.Range("A1:A10").Activate
 
-5. Set rng = Sheet1.Range("A65536").End(xlUp)：行列最后一个非空单元格
+Set rng = Sheet1.Range("A65536").End(xlUp)：行列最后一个非空单元格
 
-6. Sheet1.UsedRange.Rows.Count：算出整个Sheet内，已使用的Row的数目
+Sheet1.UsedRange.Rows.Count：算出整个Sheet内，已使用的Row的数目
 
-7. 查找单元格
+查找单元格
 
 	'使用对话框，查找工作表中特定的内容单元格。
 	Dim StrFind As String
@@ -63,7 +63,7 @@ tags: DATA
 	   End With
 	End If
 
-8. 使用Like来匹配列的值
+使用Like来匹配列的值
 
 	pattern中的字符	符合string中的字符
 	?任何单一字符
@@ -86,9 +86,9 @@ tags: DATA
         Next
     End With
 
-9. 使用Range对象的Replace方法：Range("A1:A5").Replace "通州", "南通"
+使用Range对象的Replace方法：Range("A1:A5").Replace "通州", "南通"
 
-10. 使用Copy:
+使用Copy:
 
 	Application.DisplayAlerts = False
 	Sheet1.Range("A1").CurrentRegion.Copy Sheet2.Range("A1")
@@ -99,7 +99,7 @@ tags: DATA
 	 .PasteSpecial Paste:=xlPasteValues
 	End With
 
-11. Color 
+Color 
 
 	With Range("A1").Font
 		.Name = "华文彩云"
@@ -108,7 +108,7 @@ tags: DATA
 		.ColorIndex = 3
 		.Underline = 2
 	End With
-12. 在单元格中写入公式
+在单元格中写入公式
 
 	Sheets("Main_Data").Cells(3, 117).Formula = "=IF(SUM(CZ3:DL3)=0,"" "",""MPS Change"")" '双引号", 在里面要用两个""来替代，其余的就是正常写入
 
