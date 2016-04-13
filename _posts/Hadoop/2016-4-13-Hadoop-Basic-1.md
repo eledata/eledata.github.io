@@ -63,29 +63,30 @@ Hadoop搭建环境：
 
 1.  点击System-->Preferences-->Network Connections
 2.  
-![1](/public/img/posts/hadoop/2016-04-13_NetWork.png)
+![1](/public/img/posts/2016-04-13_NetWork.png)
 
 2.  修改完毕之后，重启电脑，打开终端。输入：ifconfig 查看ip地址。
 3.  
-![1](/public/img/posts/hadoop/2016-04-13_NetWork_ifconfig.png)
+![1](/public/img/posts/2016-04-13_NetWork_ifconfig.png)
 
 2.2.1.2设置机器名
 
 使用sudo vi /etc/sysconfig/network 打开配置文件，根据实际情况设置该服务器的机器名，新机器名在重启后生效。
 
-![1](/public/img/posts/hadoop/2016-04-13_network_machine_name.png)
+![1](/public/img/posts/2016-04-13_network_machine_name.png)
 
 2.2.1.3设置Host映射文件
 
 1.  设置IP地址与机器名的映射，设置信息如下：
-sudo vi /etc/hosts
-加入：192.168.1.8 hadoop
 
-![1](/public/img/posts/hadoop/2016-04-13_machine_hostsname.png)
+	sudo vi /etc/hosts
+	加入：192.168.1.8 hadoop
+
+![1](/public/img/posts/2016-04-13_machine_hostsname.png)
 
 2.使用如下命令对网络设置进行重启
 
-sudo /etc/init.d/network restart
+	sudo /etc/init.d/network restart
 
 3.使用ping命令验证设置是否成功:win7 cmd -> ping 192.168.1.8
 
@@ -97,7 +98,7 @@ sudo /etc/init.d/network restart
 
 1.使用sudo service iptables status 查看防火墙状态，如下所示表示iptables已经开启
 
-![1](/public/img/posts/hadoop/2016-04-13_firewall.png)
+![1](/public/img/posts/2016-04-13_firewall.png)
 
 2.以root用户使用如下命令关闭iptables
 
@@ -112,7 +113,7 @@ sudo /etc/init.d/network restart
 
 将SELINUX=enforcing改为SELINUX=disabled，执行该命令后重启机器
 
-![1](/public/img/posts/hadoop/2016-04-13_selinux.png)
+![1](/public/img/posts/2016-04-13_selinux.png)
 
 2.2.2.3 JDK安装及配置
 
@@ -123,15 +124,17 @@ sudo /etc/init.d/network restart
 [http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html "JDK Download")
 
 2.创建/app目录，把该目录的所有者修改为hmy
+
 	sudo mkdir /app
 	sudo chown -R hmy:hmy /app
 
-![1](/public/img/posts/hadoop/2016-04-13_hadoop_path.png)
+![1](/public/img/posts/2016-04-13_hadoop_path.png)
 
 3. 创建/app/lib目录，使用命令如下：
+
 	mkdir /app/lib
 
-![1](/public/img/posts/hadoop/2016-04-13_hadoop_path.png)
+![1](/public/img/posts/2016-04-13_hadoop_path.png)
 
 4.把下载的安装包解压并迁移到/app/lib目录下
 
@@ -172,22 +175,26 @@ CentOS自带的OpenSSL存在bug，如果不更新OpenSSL在Ambari部署过程会
 	#AuthorizedKeysCommandRunAs nobody
 
 2.配置后重启服务
+
 	sudo service sshd restart
 
-3.使用hmy用户登录使用如下命令生成私钥和公钥；
+3.使用hmy用户登录使用如下命令生成私钥和公钥
+
 	ssh-keygen -t rsa
 
 4.进入/home/hmy/.ssh目录把公钥命名为authorized_keys，使用命令如下：
+
 	cp id_rsa.pub authorized_keys
 
 5.使用如下设置authorized_keys读写权限
+
 	chmod 400 authorized_keys
 
 6.测试ssh免密码登录是否生效
 
-![1](/public/img/posts/hadoop/2016-04-13_putty_setting.png)
+![1](/public/img/posts/2016-04-13_putty_setting.png)
 
-![1](/public/img/posts/hadoop/2016-04-13_putty_login.png)
+![1](/public/img/posts/2016-04-13_putty_login.png)
 
 3、部署Hadooop2.6.0
 
@@ -201,11 +208,11 @@ CentOS自带的OpenSSL存在bug，如果不更新OpenSSL在Ambari部署过程会
 
 3.1.2  在Hadoop目录下创建子目录
 
-![1](/public/img/posts/hadoop/2016-04-13_hadoop_path.png)
+![1](/public/img/posts/2016-04-13_hadoop_path.png)
 
 在hadoop2.6.0目录下创建tmp、name和data目录
 
-![1](/public/img/posts/hadoop/2016-04-13_hadoop_creat_tmphdfs.png)
+![1](/public/img/posts/2016-04-13_hadoop_creat_tmphdfs.png)
 
 	cd /app/hadoop2.6.0
 	mkdir tmp
@@ -217,28 +224,36 @@ CentOS自带的OpenSSL存在bug，如果不更新OpenSSL在Ambari部署过程会
 3.1.3配置hadoop-env.sh
 
 1. 打开配置文件hadoop-env.sh
+
 	cd /app/hadoop-2.6.0/etc/hadoop
 	sudo vi hadoop-env.sh
+
 2.  加入配置内容，设置了hadoop中jdk和hadoop/bin路径
+ 
 	export HADOOP_CONF_DIR=/app/hadoop2.6.0/etc/hadoop
 	export JAVA_HOME=/app/lib/jdk1.7.0_79
 	export PATH=$PATH:/app/hadoop2.6.0/bin
 
 3. 编译配置文件hadoop-env.sh，并确认生效
+ 
 	source hadoop-env.sh
 	hadoop version
 
 3.1.4配置yarn-env.sh
 
 打开配置文件yarn-env.sh，设置了hadoop中jdk路径，配置完毕后使用source yarn-env.sh编译该文件
+
 	export JAVA_HOME=/app/lib/jdk1.7.0_79
 
 3.1.5配置core-site.xml
 
 1. 使用如下命令打开core-site.xml配置文件
+
 	cd /app/hadoop2.6.0/etc/hadoop
 	sudo vi core-site.xml
+
 2. 在配置文件中，按照如下内容进行配置
+
 	<configuration>
 	  <property>
 	    <name>fs.default.name</name>
@@ -270,9 +285,12 @@ CentOS自带的OpenSSL存在bug，如果不更新OpenSSL在Ambari部署过程会
 3.1.6配置hdfs-site.xml
 
 1.使用如下命令打开hdfs-site.xml配置文件
+
 	cd /app/hadoop2.6.0/etc/hadoop
 	sudo vi hdfs-site.xml
+
 2.在配置文件中，按照如下内容进行配置
+
 	<configuration>
 	  <property>
 	   <name>dfs.namenode.secondary.http-address</name>
@@ -299,10 +317,13 @@ CentOS自带的OpenSSL存在bug，如果不更新OpenSSL在Ambari部署过程会
 3.1.7配置mapred-site.xml
 
 1.默认情况下不存在mapred-site.xml文件，可以从模板拷贝一份，并使用如下命令打开mapred-site.xml配置文件
+
 	cd /app/hadoop2.6.0/etc/hadoop
 	cp mapred-site.xml.template mapred-site.xml
 	sudo vi mapred-site.xml
+
 2.在配置文件中，按照如下内容进行配置
+
 	<configuration>
 	  <property>
 	    <name>mapreduce.framework.name</name>
@@ -321,9 +342,12 @@ CentOS自带的OpenSSL存在bug，如果不更新OpenSSL在Ambari部署过程会
 3.1.8配置yarn-site.xml
 
 1.使用如下命令打开yarn-site.xml配置文件
+
 	cd /app/hadoop2.6.0/etc/hadoop
 	sudo vi yarn-site.xml
+
 2.在配置文件中，按照如下内容进行配置
+
 	<configuration>
 	  <property>
 	    <name>yarn.nodemanager.aux-services</name>
@@ -396,12 +420,19 @@ CentOS自带的OpenSSL存在bug，如果不更新OpenSSL在Ambari部署过程会
 3.2.4验证当前进行
 
 使用jps命令查看运行进程，此时在hadoop上运行的进程除了：namenode、secondarynamenode和datanode，增加了resourcemanager和nodemanager两个进程：
+
 	[hmy@hadoop sbin]$ jps
 	2812 NameNode
 	3021 SecondaryNameNode
 	3580 Jps
 	3464 NodeManager
 	3171 ResourceManager
+
+这时我们发现少了一个DataNode进程，到$HADOOP_HOME/logs目下，使用cat hadoop-shiyanlou-datanode-5****.log（***表示所在机器名）查看日志文件，可以看到在日志中提示：Invalid directory in dfs.data.dir:Incorrect permission for /app/hadoop-1.1.2/hdfs/data, expected:rwxr-xr-x, while actual: rwxrwxr-x
+
+	sudo chmod 755 /app/hadoop2.6.0/hdfs/data
+
+重新启动hadoop集群，可以看到DataNode进程
 
 3.3测试Hadoop
 
