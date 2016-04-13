@@ -16,6 +16,7 @@ Apache Hadoop软件库是一个框架，允许在集群服务器上使用简单�
 1.2Hadoop生态系统
 
 经过多年的发展形成了Hadoop1.X生态系统，其结构如下图所示：
+
 ![1](/public/img/posts/hadoop/2016-04-13_hadoop_structure.jpg)
 
 + HDFS--Hadoop生态圈的基本组成部分是Hadoop分布式文件系统（HDFS）。HDFS是一种数据分布式保存机制，数据被保存在计算机集群上，HDFS为HBase等工具提供了基础。
@@ -61,14 +62,17 @@ Hadoop搭建环境：
 2.2.1.1设置IP地址
 
 1.  点击System-->Preferences-->Network Connections
+2.  
 ![1](/public/img/posts/hadoop/2016-04-13_NetWork.png)
 
 2.  修改完毕之后，重启电脑，打开终端。输入：ifconfig 查看ip地址。
+3.  
 ![1](/public/img/posts/hadoop/2016-04-13_NetWork_ifconfig.png)
 
 2.2.1.2设置机器名
 
 使用sudo vi /etc/sysconfig/network 打开配置文件，根据实际情况设置该服务器的机器名，新机器名在重启后生效。
+
 ![1](/public/img/posts/hadoop/2016-04-13_network_machine_name.png)
 
 2.2.1.3设置Host映射文件
@@ -76,6 +80,7 @@ Hadoop搭建环境：
 1.  设置IP地址与机器名的映射，设置信息如下：
 sudo vi /etc/hosts
 加入：192.168.1.8 hadoop
+
 ![1](/public/img/posts/hadoop/2016-04-13_machine_hostsname.png)
 
 2.使用如下命令对网络设置进行重启
@@ -91,7 +96,9 @@ sudo /etc/init.d/network restart
 在Hadoop安装过程中需要关闭防火墙和SElinux，否则会出现异常
 
 1.使用sudo service iptables status 查看防火墙状态，如下所示表示iptables已经开启
+
 ![1](/public/img/posts/hadoop/2016-04-13_firewall.png)
+
 2.以root用户使用如下命令关闭iptables
 
 	chkconfig iptables off
@@ -104,6 +111,7 @@ sudo /etc/init.d/network restart
 2. 修改/etc/selinux/config 文件
 
 将SELINUX=enforcing改为SELINUX=disabled，执行该命令后重启机器
+
 ![1](/public/img/posts/hadoop/2016-04-13_selinux.png)
 
 2.2.2.3 JDK安装及配置
@@ -192,6 +200,7 @@ CentOS自带的OpenSSL存在bug，如果不更新OpenSSL在Ambari部署过程会
 解压缩并移动到/app目录下
 
 3.1.2  在Hadoop目录下创建子目录
+
 ![1](/public/img/posts/hadoop/2016-04-13_hadoop_path.png)
 
 在hadoop2.6.0目录下创建tmp、name和data目录
