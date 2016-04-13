@@ -61,12 +61,12 @@ Hadoop搭建环境：
 
 2.2.1.1设置IP地址
 
-1.  点击System-->Preferences-->Network Connections
-2.  
+1.点击System-->Preferences-->Network Connections
+  
 ![1](/public/img/posts/2016-04-13_NetWork.png)
 
-2.  修改完毕之后，重启电脑，打开终端。输入：ifconfig 查看ip地址。
-3.  
+2.修改完毕之后，重启电脑，打开终端。输入：ifconfig 查看ip地址。
+
 ![1](/public/img/posts/2016-04-13_NetWork_ifconfig.png)
 
 2.2.1.2设置机器名
@@ -77,7 +77,7 @@ Hadoop搭建环境：
 
 2.2.1.3设置Host映射文件
 
-1.  设置IP地址与机器名的映射，设置信息如下：
+1.设置IP地址与机器名的映射，设置信息如下：
 
 	sudo vi /etc/hosts
 	加入：192.168.1.8 hadoop
@@ -109,7 +109,7 @@ Hadoop搭建环境：
 
 1.使用sudo getenforce命令查看是否关闭，如果显示Enforcing表示没有关闭
 
-2. 修改/etc/selinux/config 文件
+2.修改/etc/selinux/config 文件
 
 将SELINUX=enforcing改为SELINUX=disabled，执行该命令后重启机器
 
@@ -130,7 +130,7 @@ Hadoop搭建环境：
 
 ![1](/public/img/posts/2016-04-13_hadoop_path.png)
 
-3. 创建/app/lib目录，使用命令如下：
+3.创建/app/lib目录，使用命令如下：
 
 	mkdir /app/lib
 
@@ -223,18 +223,18 @@ CentOS自带的OpenSSL存在bug，如果不更新OpenSSL在Ambari部署过程会
 
 3.1.3配置hadoop-env.sh
 
-1. 打开配置文件hadoop-env.sh
+1.打开配置文件hadoop-env.sh
 
 	cd /app/hadoop-2.6.0/etc/hadoop
 	sudo vi hadoop-env.sh
 
-2.  加入配置内容，设置了hadoop中jdk和hadoop/bin路径
+2.加入配置内容，设置了hadoop中jdk和hadoop/bin路径
  
 	export HADOOP_CONF_DIR=/app/hadoop2.6.0/etc/hadoop
 	export JAVA_HOME=/app/lib/jdk1.7.0_79
 	export PATH=$PATH:/app/hadoop2.6.0/bin
 
-3. 编译配置文件hadoop-env.sh，并确认生效
+3.编译配置文件hadoop-env.sh，并确认生效
  
 	source hadoop-env.sh
 	hadoop version
@@ -247,12 +247,12 @@ CentOS自带的OpenSSL存在bug，如果不更新OpenSSL在Ambari部署过程会
 
 3.1.5配置core-site.xml
 
-1. 使用如下命令打开core-site.xml配置文件
+1.使用如下命令打开core-site.xml配置文件
 
 	cd /app/hadoop2.6.0/etc/hadoop
 	sudo vi core-site.xml
 
-2. 在配置文件中，按照如下内容进行配置
+2.在配置文件中，按照如下内容进行配置
 
 	<configuration>
 	  <property>
