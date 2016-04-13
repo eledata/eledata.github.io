@@ -17,7 +17,7 @@ Apache Hadoop软件库是一个框架，允许在集群服务器上使用简单�
 
 经过多年的发展形成了Hadoop1.X生态系统，其结构如下图所示：
 
-![1](/public/img/posts/hadoop/2016-04-13_hadoop_structure.jpg)
+![1](/public/img/posts/2016-04-13_hadoop_structure.jpg)
 
 + HDFS--Hadoop生态圈的基本组成部分是Hadoop分布式文件系统（HDFS）。HDFS是一种数据分布式保存机制，数据被保存在计算机集群上，HDFS为HBase等工具提供了基础。
 
