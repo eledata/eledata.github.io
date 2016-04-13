@@ -2,7 +2,7 @@
 layout: post
 keywords: 回归分析
 description: 回归分析
-title: "R与统计建模--回归分析（二）"
+title: "R与统计建模--回归分析（下）"
 categories: 统计
 tags: 统计
 ---
